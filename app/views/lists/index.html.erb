@@ -1,0 +1,18 @@
+<nav class= ".navbar-lewagon"></nav>
+
+<h1>Movie List!🍿</h1>
+
+<%= link_to new_list_path, class: "btn btn-warning" do %>
+  <i class="fa-solid fa-plus"></i>
+  Add new list
+<% end %>
+
+<div id="lists">
+  <% @lists.each do |list| %>
+    <%= list.name %>
+  <% end %>
+</div>
+
+<% if @lists.empty? %>
+  <p>You have no lists you bastard!</p>
+<% end %>
