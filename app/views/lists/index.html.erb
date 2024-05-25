@@ -1,15 +1,24 @@
-<nav class= ".navbar-lewagon"></nav>
+<div
+  class="card-category big"
+  style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(<%= image_path 'outdoors.jpg' %>)"
+>
+  <h1>Movie List</h1>
+  <p>Create your awesome movie lists</p>
+</div>
 
-<h1>Movie List!🍿</h1>
+<div class="container">
+    <div class="d-flex justify-content-end my-4">
+      <%= link_to new_list_path, class: "btn btn-warning btn-lg" do %>
+        <i class="fa-solid fa-plus"></i>
+        Add new list
+      <% end %>
+    </div>
 
-<%= link_to new_list_path, class: "btn btn-warning" do %>
-  <i class="fa-solid fa-plus"></i>
-  Add new list
-<% end %>
-
-<div id="lists">
+<div class="row">
   <% @lists.each do |list| %>
-    <%= list.name %>
+   <div class="col-3">
+      <%= render list %>
+    </div>
   <% end %>
 </div>
 
